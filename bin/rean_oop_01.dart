@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 class Invoice {
   //#region FIELD
   // field
@@ -58,15 +60,22 @@ class Invoice {
   }
 }
 
-class InvoiceTest{
-  Invoice invoice = Invoice('11100221', 'Ram 32G 3200Mhz', 25, -90.5);
-
-  void display(){
-    print('Invoice Amount: ${invoice.getInvoiceAmount()}');
-  }
-}
-
 void main(){
-  InvoiceTest invoiceTest = InvoiceTest();
-  invoiceTest.display();
+
+  print('<<<--- Please Input --->>>');
+  stdout.write('Part Number: ');
+  String? partNum = stdin.readLineSync();
+
+  stdout.write('Part Description: ');
+  String? partDes = stdin.readLineSync();
+
+  stdout.write('Purchased Quantity: ');
+  int? purchasedQuantity = int.parse(stdin.readLineSync()!);
+
+  stdout.write('price: ');
+  double price = double.parse(stdin.readLineSync()!);
+
+  Invoice invoice = Invoice(partNum!, partDes!, purchasedQuantity, price);
+  print('-----------------------------');
+  print('Invoice Amount: ${invoice.getInvoiceAmount()}\$');
 }
