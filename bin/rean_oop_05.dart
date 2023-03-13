@@ -56,6 +56,7 @@ void main(){
 
   for(int i = 0; i < 20; i++){
     Cake cake = ReadyMadeCake(i+1, 'cake$i', i+2.5);
+
     cake.name = 'cake$i';
     cake.rate = i+2.5;
     cakes.add(cake);

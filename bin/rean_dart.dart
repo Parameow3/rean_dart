@@ -1,9 +1,17 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:rean_dart/rean_dart.dart' as rean_dart;
 
 void main(List<String> arguments) {
+testRandom();
+}
 
+void testRandom(){
+  for(int i = 0; i < 200; i++){
+    int ii = Random().nextInt(2) + 1; // rand >= 1 && < 3
+    print(ii);
+  }
 }
 
 //#region INPUT
